@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Мой Город. Ставрополь глазами горожан</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="css/adaptation.css">
+        <script type="text/javascript" src="/script/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="apple-itunes-app" content="app-id=1242234596, affiliate-data=myAffiliateData, app-argument=myURL">
+
+        <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+	    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+	    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    </head>
+    <body>
+    	<div class="header header--transparent">
+            <div class="logo">
+                <a href="#"><img src="img/icon.svg" alt=""></a>
+            </div>
+            <ul>
+                <li><a href="#">Войти</a></li>
+                <li class="search">
+                    <input type="text" name="" value="" placeholder="Поиск" class="search-input">
+                    <button type="search-button" name="search-button"><img src="img/search.svg" alt=""></button>
+                </li>
+            </ul>
+            <div class="segment-right">
+                <ul>
+                    <li><a href="https://t.me/mystavropol" target="_blank" class="icon"><img src="img/telegram.svg" alt=""></a></li>
+                    <li><a href="#" target="_blank" class="icon"><img src="img/rss.svg" alt=""></a></li>
+                    <li><a href="https://vk.com/stavropol_rf" target="_blank" class="icon"><img src="img/vk.svg" alt=""></a></li>
+                    <li><a href="https://itunes.apple.com/ru/app/ставрополь-глазами-горожан/id1242234596?mt=8" target="_blank" class="badge"><img src="img/app-store-badge.svg" alt=""></a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=ru.biz_it.mycity.stavropol&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="badge"><img src="img/google-play-badge.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner-container">
+            <div class="banner">
+                <div class="title">
+					<object class="title-logo" type="image/svg+xml" data="img/icon.svg">
+						Your browser does not support SVG
+					</object>
+					<br>
+                	Мой город
+                	<br>
+	                Ставрополь глазами горожан
+	            </div>
+                <button class="button green shadow" onclick="showModalWin( 'new_claim_modal' );"><div class="button__content">Написать обращение</div></button>
+            </div>
+        </div>
+        <div class="counters">
+            <div class="counters-container">
+                <div class="counter total">
+                    <p class="title">Всего</p>
+                    <p class="number"><%= total_count %></p>
+                    <p class="sub">+ 13 обращений за неделю</p>
+                </div>
+                <div class="counter processing">
+                    <p class="title">На рассмотрении</p>
+                    <p class="number"><%= current_count %></p>
+                    <p class="sub"></p>
+                </div>
+                <div class="counter solved">
+                    <p class="title">Решено</p>
+                    <p class="number"><%= solved_count %></p>
+                    <p class="sub">+ 15 обращений за неделю</p>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+        	<div class="button__wrap">
+	            <button class="button green shadow"><div class="button__content">Карта</div></button>
+	        </div>
+        </div>
+
+        <div class="content">
+            <div class="claims">
+                <div class="claims-container">
+
+                    <% claim_category = "Дороги" %>
+                    <% claim_theme = "Установка дорожных знаков" %>
+                    <% claim_adress = "ул. Ломоносова / ул. 8 Марта" %>
+                    <% claim_author = "Петя Иванов" %>
+
+                    <% for ( var i = 0; i < 8; i++ ) { %>
+                    <div class="claim">
+                        <div class="claim-wrapper">
+                            <div class="claim-info">
+                                <div class="claim-number">№ 170<%= i %></div>
+                                <div class="claim-category"><%= claim_category %></div>
+                                <div class="claim-text"><%= claim_theme %></div>
+                                <div class="claim-adress"><%= claim_adress %></div>
+                            </div>
+                            <div class="claim-state">
+                                <div class="claim-date">14.05.2018</div>
+                                <% switch ( Math.floor( Math.random() * 3 ) + 1 ) {
+                					case 1:
+                							status = "solved";
+                                            status_text = "Решено";
+                						break;
+                					case 2:
+                							status = "processing";
+                                            status_text = "В работе";
+                						break;
+                					case 3:
+                							status = "answered";
+                                            status_text = "Получен ответ";
+                						break;
+                				} %>
+                                <div class="claim-status <%= status %>"><%= status_text %></div>
+                                <div class="claim-author"><%= claim_author %></div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <div class="claim--actions">
+                    	<button class="button black"><div class="button__content">Загрузить еще</div></button>
+                    	<button class="button green" onclick="showModalWin( 'new_claim_modal' );"><div class="button__content">Написать обращение</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ads">
+                <% for ( var i = 0; i < 3; i++ ) { %>
+                <div class="ad-banner">
+                    <img class="ad-pic" src="img/banner-<%= i + 1 %>.png" alt="">
+                    <div class="ad-text">Test Ads Banner <%= i + 1 %></div>
+                    <div class="ad-subtext">Placed here just as a test placeholder advertisement banner. Don't touch it ;)</div>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="segment-left">
+                <div class="logo">
+                    <a href="#"><img src="img/icon.svg" alt=""></a>
+                </div>
+                <div class="title">
+                    Мой город<br>
+                    Ставрополь глазами горожан
+                </div>
+                <div class="links">
+                    <a href="#">доп. информация доп. информация доп. информация</a>
+                </div>
+            </div>
+            <div class="segment-right">
+                <ul class="social">
+                    <li><a href="https://t.me/mystavropol" target="_blank" class="icon"><img src="img/telegram.svg" alt=""></a></li>
+                    <li><a href="#" target="_blank" class="icon"><img src="img/rss.svg" alt=""></a></li>
+                    <li><a href="https://vk.com/stavropol_rf" target="_blank" class="icon"><img src="img/vk.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

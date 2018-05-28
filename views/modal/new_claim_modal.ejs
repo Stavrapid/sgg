@@ -1,0 +1,34 @@
+<div class="modal-window">
+	<form class="form" action="/new_claim" method="post" id="form-new-claim">
+		<input type="hidden" name="order_id" id="order-id" value="<%= claim_id %>" />
+		<input type="hidden" name="customer_id" id="customer-id" value="<%= claimer_id %>" />
+
+		<div class="form__item">
+			<label for="last_name">Фамилия</label>
+			<input type="text" pattern="^[A-Za-zА-Яа-яЁё]+$" name="last_name" id="last-name" placeholder="Васечкин" required></input>
+		</div>
+		<div class="form__item">
+			<label for="first_name">Имя</label>
+			<input type="text" pattern="^[A-Za-zА-Яа-яЁё]+$" name="first_name" id="first-name" placeholder="Петя" required></input>
+		</div>
+		<div class="form__item">
+			<label for="email">Электронный адрес</label>
+			<input type="email" name="email" id="email" placeholder="example@mail.ru" required></input>
+		</div>
+		<div class="form__item">
+			<label for="phone_number">Номер телефона</label>
+			<input type="tel" pattern="\+[0-9] \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}" name="phone_number" id="phone-number" placeholder="+9 (876) 543-21-00" required></input>
+		</div>
+		<div class="form__item form__item--full">
+			<label for="description">Суть обращения</label>
+			<textarea name="description" id="description" rows=4 required></textarea>
+		</div>
+		<div class="form__item">
+			<button class="form__button button blue" id="accept" form="form-new-claim"><div class="button__content">Отправить</div></button>
+		</div>
+		<div class="form__item">
+			<button class="form__button button black" id="cancel" form="null" onclick="killModalWin();"><div class="button__content">Отмена</div></button>
+		</div>
+	</form>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/masking-input.js" data-autoinit="true"></script>
+</div>

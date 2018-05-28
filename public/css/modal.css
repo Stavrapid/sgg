@@ -1,0 +1,151 @@
+/*
+===============================
+	MODAL STYLE.CSS
+===============================
+*/
+
+@keyframes modal-popup-open {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes modal-popup-kill {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.95); opacity: 0; }
+}
+
+@keyframes modal-popup-shadow {
+    from { background: rgba(0,0,0,0); }
+    to { background: rgba(0,0,0,0.75); }
+}
+
+@keyframes modal-popup-shadow-kill {
+    from { background: rgba(0,0,0,0.75); }
+    to { background: rgba(0,0,0,0); }
+}
+
+/* Стиль модальных окон
+--------------------------------------------------------------------------------
+*/
+.modal-wrap {
+	pointer-events: none;
+	position: absolute;
+	min-width: 100%;
+	min-height: 100vh;
+}
+
+.modal-window {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.modal {
+	width: 100%;
+	height: 100vh;
+	display: block;
+	overflow: auto;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	position: fixed;
+	overflow-x: hidden;
+	background: rgba(0,0,0,0.75);
+	animation-name: modal-popup-shadow;
+	animation-duration: 0.15s;
+}
+
+.modal *, .modal ::before, .maodal ::after {
+	box-sizing: border-box;
+}
+
+.modal .modal-window {
+	animation-name: modal-popup-open;
+	animation-duration: 0.15s;
+}
+
+#shadow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	/*background: #000;
+	opacity: 0.75;*/
+	left: 0;
+	top: 0;
+	pointer-events: all;
+}
+
+.form {
+	background: #f8f8f8;
+    border-radius: 20px;
+    padding: 6rem 1.5rem 1.5rem;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.05);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,15.5rem);
+    grid-row-gap: 1.1rem;
+    grid-column-gap: 1.1rem;
+    color: #888;
+    pointer-events: all;
+}
+
+.form::before {
+	content: 'Новое обращение';
+    display: block;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #333;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.form__item {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__item--actions {
+    justify-content: center;
+    grid-template-columns: 3fr 1fr;
+}
+.form__item--full {
+    grid-column: 1 / span 2;
+}
+
+.form__item label {
+	display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0 0 0.5rem;
+}
+
+.form__item input,
+.form__item textarea {
+	border-radius: 5px;
+    padding: 0.8rem;
+    width: 100%;
+    border: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    border: 3px solid rgba(226, 16, 132, 0);
+    transition: 0.3s;
+    resize: none;
+    height: auto;
+}
+
+.form__item input:invalid,
+.form__item textarea:invalid {
+	border: 3px solid rgba(226, 16, 132, 1);
+	color: #e21084;
+}

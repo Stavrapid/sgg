@@ -1,0 +1,68 @@
+@media (max-width: 1090px) {
+    .ads { display: block; width: auto; max-width: 26rem; padding: 0; margin: 2rem auto auto; }
+}
+
+/* Адаптивность iPhone 6/7/8 Plus
+--------------------------------------------------------------------------------
+*/
+@media (max-width: 420px) and (orientation: portrait) {
+    html { font-size: 11px; }
+    .counter { width: 33%; }
+    .counter .title { font-size: 1.3rem; }
+    .counter .number { font-size: 4.5rem; }
+    .counter .sub { font-size: 1rem; }
+    .map::after { opacity: 0.75; transform: scale(1.05); }
+    .map button { opacity: 1; }
+}
+
+@media (max-width: 740px) and (orientation: landscape) {
+    html { font-size: 14px; }
+    .counter { width: 33%; }
+    .map::after { opacity: 0.75; transform: scale(1.05); }
+    .map button { opacity: 1; }
+}
+
+/* Адаптивность iPhone 6/7/8
+--------------------------------------------------------------------------------
+*/
+@media (max-width: 380px) and (orientation: portrait) {
+    html { font-size: 10px; }
+    .counter { width: 33%; }
+    .counter .title { font-size: 1.3rem; }
+    .counter .number { font-size: 4.5rem; }
+    .counter .sub { font-size: 1rem; }
+    .map::after { opacity: 0.75; transform: scale(1.05); }
+    .map button { opacity: 1; }
+}
+
+@media (max-width: 668px) and (orientation: landscape) {
+    html { font-size: 14px; }
+    .map::after { opacity: 0.75; transform: scale(1.05); }
+    .map button { opacity: 1; }
+}
+
+/* Адаптивность iPhone 5/SE
+--------------------------------------------------------------------------------
+*/
+@media (max-width: 333px) and (orientation: portrait) {
+    html { font-size: 12px; }
+    .header .segment-right { display: none; }
+    .banner-container { height: 35rem; }
+    .banner .title { font-size: 3.5em; }
+    .counters { margin: -6.9rem 0.7rem 0.7rem; }
+    .counter { width: 15rem; }
+    .map { margin: 1.1rem 0.7rem; }
+    .map::after { opacity: 0.75; transform: scale(1.05); }
+    .map button { opacity: 1; }
+    .content { padding: 1.6rem 0.7rem; }
+    .form { display: block; width: 100%; }
+    .form__item + .form__item { margin: 1rem 0; }
+    .footer .segment-right { float: none; }
+    .footer .social { text-align: center; padding: 0.5rem 0 0; }
+}
+
+@media (max-width: 666px) and (orientation: landscape) {
+    html { font-size: 12px; }
+    .map::after { opacity: 0.75; transform: scale(1.05); }
+    .map button { opacity: 1; }
+}
