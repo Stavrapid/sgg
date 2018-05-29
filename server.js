@@ -12,11 +12,13 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 app.use( bodyParser.json() );
 app.use( express.static( 'public' ) );
 
-/* Прослушка порта 8080
+console.log( 'node site' + '\n' );
+
+/* Прослушка порта 3000
 --------------------------------------------------------------------------------
 */
-app.listen( 8080, function() {
-	console.log( 'Сайт запущен на порту 8080' + '\n' );
+app.listen( 3000, function() {
+	console.log( 'Сайт запущен на порту 3000' + '\n' );
 } );
 
 /* Функция рендера страницы таблицы заказов
@@ -62,6 +64,20 @@ app.get( "/new_claim_modal", function( req, res ) {
 		/*} );
 	} );*/
 
+} );
+
+/* Обработчик нового обращения в модальном окне
+--------------------------------------------------------------------------------
+*/
+app.get( "/login_modal", function( req, res ) {
+	res.send( getModal( 'login_modal.ejs', { claim_id: 42, claimer_id: 42 } ) );
+} );
+
+/* Обработчик карточки обращения в модальном окне
+--------------------------------------------------------------------------------
+*/
+app.get( "/claim_modal", function( req, res ) {
+	res.send( getModal( 'claim_modal.ejs', { claim_id: 42, claimer_id: 42 } ) );
 } );
 
 /* Обработчик корня
