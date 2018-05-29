@@ -13,6 +13,7 @@ function killModalWin() {
 		var victim = document.getElementById( 'modal' );
 		victim.parentNode.removeChild( victim ); // удаляем затемнение
 		document.body.style.overflow = 'auto'; // возвращаем скролл сайта
+		document.body.style.position = 'initial';
 		// stopBodyScrolling( false );
 	}, 100 )
 }
@@ -37,6 +38,7 @@ function showModalWin( ajaxPath ) {
 	var darkLayer = document.createElement( 'div' ); // слой затемнения
 	darkLayer.id = 'shadow'; // id чтобы подхватить стиль
 	document.body.style.overflow = 'hidden'; // блокируем скролл сайта
+	document.body.style.position = 'fixed';
 
 	// var freezeVp = function(e) {
 	//     e.preventDefault();
@@ -53,8 +55,6 @@ function showModalWin( ajaxPath ) {
 	darkLayer.onclick = function () {  // при клике на слой затемнения все исчезнет
 		killModalWin();
 	};
-
-	modal.focus();
 
 	modal.onkeydown = function( evt ) {
 		evt = evt || window.event;
