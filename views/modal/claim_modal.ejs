@@ -1,0 +1,38 @@
+<div class="modal-window">
+	<div class="claim-modal">
+        <div class="claim-wrapper">
+        	<div class="claim-header">
+        		<span class="title">Установка дорожных знаков</span>
+        		<span class="claim-status <%= status %>">№ 9999 – <%= status_text %></span>
+        	</div>
+        	<div class="claim-content">
+	            <div class="text">
+	            	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim, tellus id consequat commodo, metus dui rhoncus tellus, ac tempus mi orci aliquam magna. Etiam placerat mi lobortis, aliquam est vitae, molestie enim. Pellentesque laoreet, mi sed mollis imperdiet, mi est finibus tortor, ut imperdiet augue arcu et arcu. Integer tempus est sed pellentesque facilisis. Nullam dignissim varius imperdiet. Quisque blandit auctor tristique. Etiam feugiat enim lacus, at dapibus dui aliquet sed. Maecenas placerat, velit quis ornare vestibulum, lacus lacus mollis odio, et consequat urna urna sit amet ante. Vivamus lobortis, velit a gravida efficitur, dui lorem faucibus odio, sit amet rhoncus magna enim in turpis.
+
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet, leo vel mollis accumsan, sapien velit laoreet mi, sit amet blandit dolor risus quis libero. Aliquam ac pulvinar metus, id imperdiet ante. Integer velit ipsum, tempor ac porttitor vel, sollicitudin ut orci. Integer vitae tempus ante, sit amet convallis ipsum. Aliquam malesuada lorem at diam bibendum, eu ullamcorper mi aliquet. Proin id sapien congue, euismod massa at, porttitor ligula.
+
+	            </div>
+	            <div class="info-bottom">
+	            	<span class="date">14.05.2018</span>
+	            	<span class="category">Дороги</span>
+		            <span class="author"><%= claim_author %></span>
+		        </div>
+	            <% switch ( Math.floor( Math.random() * 3 ) + 1 ) {
+					case 1:
+							status = "solved";
+	                        status_text = "Решено";
+						break;
+					case 2:
+							status = "processing";
+	                        status_text = "В работе";
+						break;
+					case 3:
+							status = "answered";
+	                        status_text = "Получен ответ";
+						break;
+				} %>
+        	</div>
+    	</div>
+    </div>
+
+</div>

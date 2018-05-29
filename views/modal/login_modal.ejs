@@ -1,0 +1,21 @@
+<div class="modal-window">
+	<form class="form" action="/login" method="post" id="form-login">
+		<input type="hidden" name="order_id" id="order-id" value="<%= claim_id %>" />
+		<input type="hidden" name="customer_id" id="customer-id" value="<%= claimer_id %>" />
+
+		<div class="form__item">
+			<label for="last_name">Логин</label>
+			<input type="login" name="login" id="login" placeholder="Логин"></input>
+		</div>
+		<div class="form__item">
+			<label for="first_name">Пароль</label>
+			<input type="password" name="password" id="password"></input>
+		</div>
+		<div class="form__item">
+			<button class="form__button button blue" id="accept" form="form-new-claim"><div class="button__content">Войти</div></button>
+		</div>
+		<div class="form__item">
+			<button class="form__button button black" id="cancel" form="null" onclick="killModalWin();"><div class="button__content">Отмена</div></button>
+		</div>
+	</form>
+</div>
