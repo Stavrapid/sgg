@@ -18,25 +18,22 @@
     </head>
     <body>
     	<div class="header header--transparent">
-            <div class="logo">
+            <span class="logo">
                 <a href="#"><img src="img/icon.svg" alt=""></a>
-            </div>
-            <ul>
-                <li><a href="#">Войти</a></li>
-                <li class="search">
-                    <input type="text" name="" value="" placeholder="Поиск" class="search-input">
-                    <button type="search-button" name="search-button"><img src="img/search.svg" alt=""></button>
-                </li>
-            </ul>
-            <div class="segment-right">
-                <ul>
-                    <li><a href="https://t.me/mystavropol" target="_blank" class="icon"><img src="img/telegram.svg" alt=""></a></li>
-                    <li><a href="#" target="_blank" class="icon"><img src="img/rss.svg" alt=""></a></li>
-                    <li><a href="https://vk.com/stavropol_rf" target="_blank" class="icon"><img src="img/vk.svg" alt=""></a></li>
-                    <li><a href="https://itunes.apple.com/ru/app/ставрополь-глазами-горожан/id1242234596?mt=8" target="_blank" class="badge"><img src="img/app-store-badge.svg" alt=""></a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=ru.biz_it.mycity.stavropol&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="badge"><img src="img/google-play-badge.svg" alt=""></a></li>
-                </ul>
-            </div>
+            </span>
+            <span class="header-menu">
+                <span><a onclick="showModalWin( 'login_modal' );">Войти</a></span>
+                <span class="search"><input type="text" name="" value="" placeholder="Поиск" class="search-input"></span>
+            </span>
+            <span class="segment-right">
+                <span>
+                    <span><a href="https://t.me/mystavropol" target="_blank" class="icon"><img src="img/telegram.svg" alt=""></a></span>
+                    <span><a href="#" target="_blank" class="icon"><img src="img/rss.svg" alt=""></a></span>
+                    <span><a href="https://vk.com/stavropol_rf" target="_blank" class="icon"><img src="img/vk.svg" alt=""></a></span>
+                    <span><a href="https://itunes.apple.com/ru/app/ставрополь-глазами-горожан/id1242234596?mt=8" target="_blank" class="badge"><img src="img/app-store-badge.svg" alt=""></a></span>
+                    <span><a href="https://play.google.com/store/apps/details?id=ru.biz_it.mycity.stavropol&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="badge"><img src="img/google-play-badge.svg" alt=""></a></span>
+                </span>
+            </span>
         </div>
         <div class="banner-container">
             <div class="banner">
@@ -83,11 +80,11 @@
 
                     <% claim_category = "Дороги" %>
                     <% claim_theme = "Установка дорожных знаков" %>
-                    <% claim_adress = "ул. Ломоносова / ул. 8 Марта" %>
+                    <% claim_adress = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet, leo vel mollis accumsan, sapien velit laoreet mi, sit amet blandit dolor risus quis libero. Aliquam ac pulvinar metus, id imperdiet ante. Integer velit ipsum, tempor ac porttitor vel, sollicitudin ut orci. Integer vitae tempus ante, sit amet convallis ipsum. Aliquam malesuada lorem at diam bibendum, eu ullamcorper mi aliquet. Proin id sapien congue, euismod massa at, porttitor ligula." %>
                     <% claim_author = "Петя Иванов" %>
 
                     <% for ( var i = 0; i < 8; i++ ) { %>
-                    <div class="claim">
+                    <div class="claim" onclick="showModalWin( 'claim_modal' );">
                         <div class="claim-wrapper">
                             <div class="claim-info">
                                 <div class="claim-number">№ 170<%= i %></div>
@@ -149,13 +146,13 @@
                     <a href="#">доп. информация доп. информация доп. информация</a>
                 </div>
             </div>
-            <div class="segment-right">
-                <ul class="social">
-                    <li><a href="https://t.me/mystavropol" target="_blank" class="icon"><img src="img/telegram.svg" alt=""></a></li>
-                    <li><a href="#" target="_blank" class="icon"><img src="img/rss.svg" alt=""></a></li>
-                    <li><a href="https://vk.com/stavropol_rf" target="_blank" class="icon"><img src="img/vk.svg" alt=""></a></li>
-                </ul>
-            </div>
+            <span class="segment-right">
+                <span class="social">
+                    <span><a href="https://t.me/mystavropol" target="_blank" class="icon"><img src="img/telegram.svg" alt=""></a></span>
+                    <span><a href="#" target="_blank" class="icon"><img src="img/rss.svg" alt=""></a></span>
+                    <span><a href="https://vk.com/stavropol_rf" target="_blank" class="icon"><img src="img/vk.svg" alt=""></a></span>
+                </span>
+            </span>
         </div>
     </body>
 </html>
