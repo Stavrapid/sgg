@@ -1,5 +1,6 @@
 @media (max-width: 1090px) {
     .ads { display: block; width: auto; max-width: 26rem; padding: 0; margin: 2rem auto auto; }
+    .claim-info { max-width: 73%; }
 }
 
 /* Адаптивность iPhone 6/7/8 Plus
@@ -13,6 +14,7 @@
     .counter .sub { font-size: 1rem; }
     .map::after { opacity: 0.75; transform: scale(1.05); }
     .map button { opacity: 1; }
+    .claim-info { max-width: 65%; }
 }
 
 @media (max-width: 740px) and (orientation: landscape) {
@@ -20,6 +22,7 @@
     .counter { width: 33%; }
     .map::after { opacity: 0.75; transform: scale(1.05); }
     .map button { opacity: 1; }
+    .claim-info { max-width: 75%; }
 }
 
 /* Адаптивность iPhone 6/7/8
@@ -33,19 +36,21 @@
     .counter .sub { font-size: 1rem; }
     .map::after { opacity: 0.75; transform: scale(1.05); }
     .map button { opacity: 1; }
+    .claim-info { max-width: 65%; }
 }
 
 @media (max-width: 668px) and (orientation: landscape) {
     html { font-size: 14px; }
     .map::after { opacity: 0.75; transform: scale(1.05); }
     .map button { opacity: 1; }
+    .claim-info { max-width: 75%; }
 }
 
 /* Адаптивность iPhone 5/SE
 --------------------------------------------------------------------------------
 */
 @media (max-width: 333px) and (orientation: portrait) {
-    html { font-size: 12px; }
+    html { font-size: 14px; }
     .header .segment-right { display: none; }
     .banner-container { height: 35rem; }
     .banner .title { font-size: 3.5em; }
@@ -55,14 +60,16 @@
     .map::after { opacity: 0.75; transform: scale(1.05); }
     .map button { opacity: 1; }
     .content { padding: 1.6rem 0.7rem; }
+    .claim-info { max-width: 50%; }
     .form { display: block; width: 100%; }
     .form__item + .form__item { margin: 1rem 0; }
-    .footer .segment-right { float: none; }
+    .footer .segment-right { float: none; display: block; }
     .footer .social { text-align: center; padding: 0.5rem 0 0; }
 }
 
 @media (max-width: 666px) and (orientation: landscape) {
-    html { font-size: 12px; }
+    html { font-size: 14px; }
     .map::after { opacity: 0.75; transform: scale(1.05); }
     .map button { opacity: 1; }
+    .claim-info { max-width: 70%; }
 }

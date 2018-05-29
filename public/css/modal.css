@@ -94,7 +94,7 @@
 }
 
 .form::before {
-	content: 'Новое обращение';
+	content: '';
     display: block;
     padding: 1.5rem;
     position: absolute;
@@ -106,6 +106,14 @@
     border-radius: 20px 20px 0 0;
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+#form-new-claim.form::before {
+	content: 'Новое обращение';
+}
+
+#form-login.form::before {
+	content: 'Вход';
 }
 
 .form__item {
@@ -148,4 +156,76 @@
 .form__item textarea:invalid {
 	border: 3px solid rgba(226, 16, 132, 1);
 	color: #e21084;
+}
+
+
+/* Карточка обращения
+--------------------------------------------------------------------------------
+*/
+.claim-modal {
+	border-radius: 30px;
+	pointer-events: all;
+	margin: 4rem 3rem;
+}
+
+.claim-modal .claim-header {
+	background: #fff;
+	padding: 0.8rem 0.8rem 0.8rem 1.4rem;
+	display: block;
+	/*text-align: right;*/
+	border-radius: 20px 20px 0 0;
+}
+
+.claim-modal .claim-header .title {
+	color: #222;
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: left;
+	/*float: left;*/
+    margin-top: 0.2rem;
+}
+
+.claim-modal .claim-header .claim-status {
+	margin-left: 0.5rem;
+}
+
+.claim-modal .claim-header .number {
+	color: #ccc;
+}
+
+.claim-modal .claim-content {
+	background: #f8f8f8;
+	padding: 0.4rem 1.4rem 0.8rem 1.4rem;
+	display: block;
+	border-radius: 0 0 20px 20px;
+}
+
+.claim-modal .info-top {
+	color: #8e8e8e;
+	padding: 0 0 1rem;
+	text-align: right;
+}
+
+.claim-modal .info-top .category {
+	float: left;
+}
+
+.claim-modal .claim-content .text {
+	color: #333;
+	padding: 0.8rem 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.claim-modal .claim-content .info-bottom {
+	color: #8e8e8e;
+	padding: 0.8rem 0 0;
+}
+
+.claim-modal .claim-content .info-bottom :not(:first-child) {
+	margin-left: 0.8rem;
+}
+
+.claim-modal .claim-content .info-bottom .author {
+	float: right;
 }

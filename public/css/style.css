@@ -58,6 +58,7 @@
 
 html {
     font-size: 18px;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -217,40 +218,52 @@ button.button.black:active .button__content {
     width: auto;
 }
 
-.header ul,
-.footer ul {
+.header .header-menu {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.8rem;
+    font-size: 0;
+}
+
+.header .header-menu > span {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.5rem;
+}
+
+.header .header-menu > span > a {
+    display: inline-block;
+    padding: 0.8rem 0 0.6rem;
+    cursor: pointer;
+}
+
+.header span,
+.footer span {
     list-style: none;
     display: inline-block;
-    margin: 0;
-    padding: 0 0 0 0.9rem;
     vertical-align: top;
 }
 
-.header ul li,
-.footer ul li {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.header ul li a,
-.footer ul li a {
+.header span span a,
+.footer span span a {
     padding: 0.6rem 0.3rem 0.4rem 0.8rem;
     /* background: #777; */
     display: block;
     margin: 0;
 }
 
-.header ul li a.icon,
-.footer ul li a.icon {
+.header span span a.icon,
+.footer span span a.icon {
     padding: 0;
     margin: 0.6rem 0.2rem;
     width: auto;
     height: 1.1rem;
 }
 
-.header ul li a.badge,
-.footer ul li a.badge {
+.header span a.badge,
+.footer span a.badge {
     padding: 0 0 0 0.8rem;
+    margin: 0.3rem 0 0.2rem;
     width: auto;
     height: 1.6rem;
 }
@@ -277,20 +290,33 @@ button.button.black:active .button__content {
 }
 
 .search {
-    vertical-align: bottom !important;
     position: relative;
+    padding: 0.3rem 0 0.2rem;
 }
 
 .search-input {
     padding: 0.5rem 2.2rem 0.4rem 0.8rem;
+    margin: 0;
     border: 0;
-    width: 3.3rem;
+    width: 3rem;
     background: #fff0;
     border-radius: 30px;
     font-family: 'Roboto';
     font-weight: 700;
     color: #333;
     transition: 0.3s;
+}
+
+.search::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0.9rem;
+    right: 0.6rem;
+    background: url('../img/search.svg') no-repeat;
+    background-size: 100%;
+    width: 1rem;
+    height: 1rem;
 }
 
 .search-input::placeholder {
@@ -305,22 +331,6 @@ button.button.black:active .button__content {
 
 .search-input:focus::placeholder {
     color: #aaa;
-}
-
-button[type="search-button"] {
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    background: none;
-    width: 1rem;
-    position: absolute;
-    top: 0.6rem;
-    right: 0.6rem;
-}
-
-button[type="search-button"] > img {
-    width: 1rem;
 }
 
 .banner-container {
@@ -394,12 +404,12 @@ button[type="search-button"] > img {
     display: inline-block;
     text-align: center;
     vertical-align: top;
-    padding: 2.2rem 1.1rem;
+    padding: 2.2rem 0;
     width: 33%;
     position: relative;
     box-sizing: border-box;
     /*min-width: 25rem;*/
-    width: 25rem;
+    /*width: 23rem;*/
 }
 
 .counter .title {
@@ -407,6 +417,7 @@ button[type="search-button"] > img {
     font-size: 1.3rem;
     margin: 0;
     color: #888;
+    white-space: nowrap;
 }
 
 .counter .number {
@@ -483,6 +494,8 @@ button[type="search-button"] > img {
     border-radius: 20px;
     font-size: 0.9rem;
     background: #f8f8f8;
+    cursor: pointer;
+    position: relative;
 }
 
 .claim + .claim {
@@ -496,6 +509,8 @@ button[type="search-button"] > img {
 
 .claim-info {
     display: table-cell;
+    position: absolute;
+    max-width: 80%;
 }
 
 .claim-number, .claim-category {
@@ -509,6 +524,14 @@ button[type="search-button"] > img {
     margin: 0.5rem 0;
     font-size: 1rem;
     color: #111;
+}
+
+.claim-text,
+.claim-adress {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 
 .claim-state {
@@ -527,7 +550,7 @@ button[type="search-button"] > img {
     text-align: center;
     display: inline-block;
     font-weight: 500;
-    pointer-events: none;s
+    pointer-events: none;
 }
 
 .claim-status.solved {
